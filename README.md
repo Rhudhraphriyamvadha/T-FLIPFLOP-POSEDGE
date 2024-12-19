@@ -28,15 +28,54 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-/* write all the steps invloved */
+```
+Developed by : RHUDHRA PHRIYAMVADHA K S
+Reg no : 24900189
+```
+```
+1.Define Module: Define a Verilog module for the T flip-flop with inputs (T, CLK) and outputs (Q, Q_bar).
+
+2.Declare Inputs and Outputs: Declare input and output ports for the module.
+
+3.Implement Flip-Flop Logic: Write Verilog code to implement the T flip-flop logic based on its functional table.
+Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
+
+4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the T flip-flop under different input conditions.
+
+5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (T, CLK) to cover all possible input states.
+```
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module Tflipflop( input clk, rst_n, input t,
+output reg q,
+output q_bar
+);
+always@(posedge clk) 
+begin 
+if(!rst_n)
+q<=0;
+else
+if(t)
+q<=~q;
+else
+q<=q;
+end
+assign q_bar = ~q;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![T ff 9](https://github.com/user-attachments/assets/31bb652a-dfb0-4245-96eb-480e134955f4)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![waveform t](https://github.com/user-attachments/assets/a4acd40a-33dd-46fc-8d6e-d10fa12d4a22)
+
+
 **RESULTS**
+
+Thus,the T Flip-Flop is designed and its functionality is validated using the truth table and timing diagrams.
